@@ -1,5 +1,5 @@
 body {
-  background: rgb(253, 249, 205);
+  background: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   font-family: verdana;
   line-height: 1.4em;
@@ -17,6 +17,8 @@ p {
 
 ul {
   padding: 0;
+
+  list-style: none;
 }
 
 h1 {
@@ -31,7 +33,7 @@ h1 {
 }
 
 #container {
-  background: rgb(201, 168, 242);
+  background: rgb(189, 131, 181);
   width: 960px;
   margin: 30px auto;
   overflow: hidden;
@@ -69,7 +71,7 @@ h1 {
 #footer {
   text-align: center;
   padding: 10px;
-  background: rgb(204, 244, 250);
+  background: rgb(255, 255, 255);
   margin-top: 30px;
 }
 

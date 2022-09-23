@@ -1,0 +1,23 @@
+{
+  "name": "webi",
+  "version": "1.0.0",
+  "main": "palindromi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hevipiude/webbijuttuja.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hevipiude/webbijuttuja/issues"
+  },
+  "homepage": "https://github.com/hevipiude/webbijuttuja#readme",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

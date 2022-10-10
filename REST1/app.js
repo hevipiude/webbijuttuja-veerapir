@@ -5,20 +5,25 @@ const app = express();
 const port = 3000;
 
 app.get("/", function (req, res) {
-  try {
-    const data = fs.readFileSync(tiedosto, "utf8");
-    const arr = data.split("\n").map((str) => str.split(" "));
+  const sana = req.query.sana;
 
-    const sanat = Object.fromEntries(arr);
-    const sana = req.query.sana;
+  if (sana) {
+    try {
+      const data = fs.readFileSync(tiedosto, "utf8");
+      const arr = data.split("\n").map((str) => str.split(" "));
 
-    if (sana in sanat) {
-      res.status(200).send(sanat[sana]);
-    } else {
-      res.sendStatus(404);
+      const sanat = Object.fromEntries(arr);
+
+      if (sana in sanat) {
+        res.status(200).send(sanat[sana]);
+      } else {
+        res.sendStatus(404);
+      }
+    } catch (err) {
+      res.sendStatus(500);
     }
-  } catch (err) {
-    res.sendStatus(500);
+  } else {
+    res.sendStatus(400);
   }
 });
 

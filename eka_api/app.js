@@ -2,6 +2,7 @@ let data = [
   { id: 1, firstName: "Matti", lastName: "Ruohonen" },
 
   { id: 2, firstName: "Teppo", lastName: "Ruohonen" },
+  { id: 3, firstName: "Eero", lastName: "Ruohonen" },
 ];
 
 const express = require("express");

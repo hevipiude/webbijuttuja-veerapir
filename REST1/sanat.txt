@@ -1,6 +1,0 @@
-auto car
-talo house
-kissa cat
-koira dog
-lehmä cow
-kahvi coffee

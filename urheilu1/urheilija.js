@@ -1,6 +1,6 @@
-import { firstNames, lastName, nickName, birthYear } from "./henkilo";
+/**import { firstNames, lastName, nickName, birthYear } from "./henkilo";
 
-class urheilija extends henkilo {
+export class urheilija extends henkilo {
   constructor(firstNames, lastName, nickName, birthYear, pic, w, sport, acc) {
     super(firstNames, lastName, nickName, birthYear);
     this.picture = pic;
@@ -54,3 +54,4 @@ class urheilija extends henkilo {
     );
   }
 }
+*/

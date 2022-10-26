@@ -1,4 +1,7 @@
-import { firstNames, lastName, nickName, birthYear } from "./henkilo";
+//import { firstNames, lastName, nickName, birthYear } from "./henkilo";
+
+import { henkilo } from "./henkilo.js";
+import { urheilija } from "./henkilo.js";
 
 console.log();
 var veera = new henkilo("Veera Katariina", "Pirttilahti", "Veera", "1996");
@@ -47,3 +50,16 @@ veeraUrh.accomplishments = "kisujen pesupalkinto";
 console.log(veeraUrh.toString());
 console.log(peteUrh.toString());
 console.log(bubiUrh.toString());
+
+const u3 = new urheilija(
+  "Aku",
+  "Ankka",
+  "Aku",
+  new Date("1995"),
+  "",
+  70,
+  "karate",
+  "2. sija 2020"
+);
+
+console.log(u3.toString());

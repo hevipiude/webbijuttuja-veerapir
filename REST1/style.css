@@ -1,0 +1,91 @@
+body {
+  background: rgb(218, 188, 208);
+  color: rgb(0, 0, 0);
+  font-family: verdana;
+  line-height: 1.4em;
+}
+
+a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-family: verdana;
+}
+
+p {
+  margin: 20px;
+}
+
+ul {
+  padding: 0;
+
+  list-style: none;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-family: verdana;
+  text-align: center;
+}
+
+.clr {
+  clear: both;
+}
+
+#container {
+  background: rgb(255, 255, 255);
+  margin: 30px auto;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+#input-background {
+  background: rgb(218, 188, 208);
+  margin: 30px auto;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+#nav {
+  height: 40px;
+  background: rgb(255, 255, 255);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+#nav ul {
+  padding: 10px;
+  margin: 30px;
+}
+
+#nav li {
+  list-style: none;
+  float: left;
+  padding-right: 20px;
+}
+
+#nav .active {
+  font-weight: bold;
+  color: #000;
+}
+
+input,
+textarea {
+  padding: 6px;
+  margin-left: 12px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+}
+
+button {
+  background: rgb(255, 255, 255);
+  padding: 6px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+}

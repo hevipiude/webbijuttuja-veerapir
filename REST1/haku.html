@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(() => {
+        $.get("http://localhost:3000/", (sanat) => {
+          const $sanat = $("#sanat");
+        });
+
+        $('[name="Search"]').click(() => {
+          $.get(
+            `http://localhost:3000?sana=${$("#searchterm").val()}`,
+            ({ en }) => $("#result").text(en)
+          );
+        });
+      });
+    </script>
+  </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>SANAKIRJA</h1>
+    </div>
+    <div id="nav">
+      <ul>
+        <li><a class="active" href="haku.html">HAKU</a></li>
+        <li><a href="lisays.html">LISÄYS</a></li>
+      </ul>
+    </div>
+    <form id="input-background">
+      <th>Haku</th>
+      <td>
+        <input
+          name="searchterm"
+          id="searchterm"
+          type="text"
+          value=""
+          maxlength="35"
+          size="35"
+        />
+      </td>
+
+      <td>
+        <input name="Search" type="button" value="Hae" />
+      </td>
+    </form>
+    <div id="container">
+      <p id="result"></p>
+      <dl id="sanat"></dl>
+    </div>
+  </body>
+</html>

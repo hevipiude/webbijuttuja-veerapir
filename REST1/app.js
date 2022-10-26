@@ -3,27 +3,65 @@ const fs = require("fs");
 const express = require("express");
 const app = express();
 const port = 3000;
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+//CORS asetukset
+
+app.use(function (req, res, next) {
+  // Website you wish to allow to connect
+
+  res.setHeader("Access-Control-Allow-Origin", "*");
+
+  // Request methods you wish to allow
+
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+
+  // Request headers you wish to allow
+
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token"
+  );
+
+  // Set to true if you need the website to include cookies in the requests sent
+  // to the API (e.g. in case you use sessions)
+
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Content-type", "application/json");
+
+  next();
+});
+
+//end CORS
 
 app.get("/", function (req, res) {
   const sana = req.query.sana;
 
-  if (sana) {
-    try {
-      const data = fs.readFileSync(tiedosto, "utf8");
-      const arr = data.split("\n").map((str) => str.split(" "));
+  try {
+    const data = fs.readFileSync(tiedosto, "utf8");
+    const sanat = data.split("\n").map((str) => {
+      const [fi, en] = str.split(" ");
 
-      const sanat = Object.fromEntries(arr);
+      return { fi, en };
+    });
 
-      if (sana in sanat) {
-        res.status(200).send(sanat[sana]);
+    if (sana) {
+      const tulos = sanat.find((s) => s.fi === sana);
+
+      if (tulos) {
+        res.status(200).send(tulos);
       } else {
         res.sendStatus(404);
       }
-    } catch (err) {
-      res.sendStatus(500);
+    } else {
+      res.status(200).send(sanat);
     }
-  } else {
-    res.sendStatus(400);
+  } catch (err) {
+    res.sendStatus(500);
   }
 });
 

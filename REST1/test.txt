@@ -1,8 +1,5 @@
 auto car
 talo house
 kissa cat
-kissa cat
-kissa cat
-kissa cat
-kissa cat
-kissa cat
+koira dog
+mehu juice

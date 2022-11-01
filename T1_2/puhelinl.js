@@ -1,8 +1,4 @@
-var input = require("readline-sync");
-var nimi = input.question("Anna nimi:");
-var numero = input.question("Anna puhelinnumero:");
 var luettelo = [
-  { nimi, numero },
   {
     nimi: "pate",
     numero: "0400401234",
@@ -16,13 +12,18 @@ var luettelo = [
     numero: "0100101234",
   },
 ];
+var input = require("readline-sync");
+var u_nimi = input.question("Anna nimi:");
+var u_numero = input.question("Anna puhelinnumero:");
 
-console.log(searchNumber(luettelo));
+var uusi = { nimi: u_nimi, numero: u_numero };
+luettelo.push(uusi);
 
-function searchNumber(luettelo) {
+console.log(searchNumber(luettelo, "pate"));
+
+function searchNumber(luettelo, nimi) {
   var yOrN = input.question("haluatko etsiä numeroa? vastaa 'k' tai 'e': ");
   if (yOrN == "k") {
-    var nimi = input.question("Etsi numeroa nimellä: ");
     var x = luettelo.find((x) => x.nimi === nimi);
     console.log(nimi + " nimisen henkilön puhelinnumero on:");
     return x.numero;
@@ -30,3 +31,4 @@ function searchNumber(luettelo) {
     console.log("kiitti moi");
   }
 }
+console.log(luettelo);

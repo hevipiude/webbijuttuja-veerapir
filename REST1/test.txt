@@ -3,3 +3,5 @@ talo house
 kissa cat
 koira dog
 mehu juice
+kissa cat
+joo yes

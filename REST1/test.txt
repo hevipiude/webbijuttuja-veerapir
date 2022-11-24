@@ -5,3 +5,4 @@ koira dog
 mehu juice
 kissa cat
 joo yes
+lehmä cow

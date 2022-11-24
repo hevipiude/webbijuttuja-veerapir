@@ -1,6 +1,6 @@
 const db = require("/Users/veera/Documents/Webi/urh2/config/db.js");
 
-class Post {
+class Athlete {
   constructor(
     firstname,
     surname,
@@ -24,8 +24,8 @@ class Post {
   async save() {
     let sql = `INSERT INTO athlete(firstname, surname, nickname, birthyear, weight, photo_link, sport, acc) VALUES('${this.firstname}', '${this.surname}', '${this.nickname}', '${this.birthyear}','${this.weight}','${this.photo_link}','${this.sport}','${this.acc}')`;
 
-    const [newPost, _] = await db.execute(sql);
-    return newPost;
+    const [newAthlete, _] = await db.execute(sql);
+    return newAthlete;
   }
 
   static findAll() {
@@ -34,21 +34,30 @@ class Post {
   }
 
   static findById(id) {
-    let sql = `SELECT * FROM athlete WHERE id=${id}`;
+    let sql = `SELECT * FROM athlete WHERE id_athlete=${id}`;
     return db.execute(sql);
   }
 
   static deleteById(id) {
-    let sql = `DELETE FROM athlete WHERE id=${id}`;
+    let sql = `DELETE FROM athlete WHERE id_athlete=${id}`;
     return db.execute(sql);
   }
 
-  static updateById(id, title, body) {
-    let sql = `UPDATE athlete SET title = "${title}", body = "${body}" WHERE id = ${id};`;
-    let sql2 = `UPDATE athlete SET firstname = '${this.firstname}', surname = '${this.surname}', nickname =  '${this.nickname}', birthyear = '${this.birthyear}', weight = '${this.weight}', photo_link = '${this.photo_link}', sport = '${this.sport}', acc = '${this.acc}')`;
+  static updateById(
+    id,
+    firstname,
+    surname,
+    nickname,
+    birthyear,
+    weight,
+    photo_link,
+    sport,
+    acc
+  ) {
+    let sql = `UPDATE athlete SET firstname = '${firstname}', surname = '${surname}', nickname =  '${nickname}', birthyear = '${birthyear}', weight = '${weight}', photo_link = '${photo_link}', sport = '${sport}', acc = '${acc}' WHERE id_athlete = ${id};`;
 
     return db.execute(sql);
   }
 }
 
-module.exports = Post;
+module.exports = Athlete;

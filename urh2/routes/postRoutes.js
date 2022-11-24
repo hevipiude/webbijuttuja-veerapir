@@ -6,13 +6,13 @@ const router = express.Router();
 
 router
   .route("/")
-  .get(postControllers.getAllPosts)
-  .post(postControllers.createNewPost);
+  .get(postControllers.getAllAthletes)
+  .post(postControllers.createNewAthlete);
 
 router
   .route("/:id")
-  .get(postControllers.getPostById)
-  .delete(postControllers.deletePostById)
-  .put(postControllers.updatePostById);
+  .get(postControllers.getAthleteById)
+  .delete(postControllers.deleteAthleteById)
+  .put(postControllers.updateAthleteById);
 
 module.exports = router;

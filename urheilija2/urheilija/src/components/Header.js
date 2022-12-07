@@ -1,8 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-const Ylatunniste = (props) => {
-  const { turvataso } = props;
+const Ylatunniste = () => {
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-3 py-0">
       <div className="container">
@@ -29,8 +27,5 @@ const Ylatunniste = (props) => {
       </div>
     </nav>
   );
-};
-Ylatunniste.propTypes = {
-  turvataso: PropTypes.string.isRequired,
 };
 export default Ylatunniste;

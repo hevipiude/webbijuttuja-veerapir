@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import AthletesContext from "../context/AthletesContext";
 import Button from "react-bootstrap/Button";
 
-const MuokkaaPuhelintieto = () => {
+const EditAthlete = () => {
   const [firstname, setFirstname] = useState("");
   const [surname, setSurname] = useState("");
   const [nickname, setNickname] = useState("");
@@ -35,7 +36,7 @@ const MuokkaaPuhelintieto = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-    const paivitettyPuhelintieto = {
+    const editedAthlete = {
       firstname: firstname,
       surname: surname,
       nickname: nickname,
@@ -46,7 +47,7 @@ const MuokkaaPuhelintieto = () => {
       acc: acc,
     };
 
-    athletesContext.setYhteystieto(id, paivitettyPuhelintieto);
+    athletesContext.setYhteystieto(id, editedAthlete);
     history("/");
   };
   const onChangeFirstN = (e) => {
@@ -170,14 +171,19 @@ const MuokkaaPuhelintieto = () => {
               </div>
             </div>
           </div>
-          <input
-            type="submit"
-            value="Vahvista muokkaus"
-            className="btn btn-dark mt-2"
-          />
+          <div className="d-grid pt-2 gap-2 d-md-block">
+            <input
+              type="submit"
+              value="Vahvista muokkaus"
+              className="btn btn-dark mt-2"
+            />
+            <Button variant="danger" href={"/"}>
+              Peruuta
+            </Button>
+          </div>
         </form>
       </div>
     </div>
   );
 };
-export default MuokkaaPuhelintieto;
+export default EditAthlete;

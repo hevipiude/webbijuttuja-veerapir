@@ -5,7 +5,7 @@ import { useState, useContext } from "react";
 import AthletesContext from "../../context/AthletesContext";
 require("react-datepicker/dist/react-datepicker.css");
 
-export default function LisaaPuhelintieto() {
+export default function AddAthlete() {
   let history = useNavigate();
   const [firstname, setFirstname] = useState("");
   const [surname, setSurname] = useState("");
